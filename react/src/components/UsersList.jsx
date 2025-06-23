@@ -8,6 +8,7 @@ const fetchUsers = async () => {
   return res.json();
 };
 
+
 const addUser = async (newUser) => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users", {
     method: "POST",
@@ -29,7 +30,7 @@ export default function Users() {
   const mutation = useMutation({
     mutationFn: addUser,
     onSuccess: () => {
-
+     
       queryClient.invalidateQueries(["users"]);
     },
   });
