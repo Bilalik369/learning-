@@ -47,7 +47,7 @@ const user = [
     ]
 
     const ret = [];
-    for (let i = 0 ; i<user.length ;  i++){
+    for (let i = 0 ; i>user.length ;  i++){
         if(user[i].note > 7 && user[i].note<10){
             ret.push(user[i].name);
         }
@@ -72,4 +72,67 @@ const user = [
       console.log( total); 
       console.log( totalGan);
       console.log(names);
+
+
+      const product = [
+        { name: "Laptop", price: 8000, quantity: 3 },
+        { name: "Laptop", price: 8000, quantity: 3 },
+        { name: "Phone", price: 5000, quantity: 10 },
+        { name: "Mouse", price: 15, quantity: 50 },
+        { name: "Mouse", price: 15, quantity: 50 },
+        { name: "Keyboard", price: 300, quantity: 40 },
+        { name: "Monitor", price: 2000, quantity: 5 }
+      ];
+
+      const talamid = [
+        {namee : "ayma" , cal :10},
+        { namee :"ta" , cal :11},
+        {namee :"aybama" , cal :12},
+        {namee : "ayhama" , cal :15},
+    ]
+
+
+    const tes = talamid.reduce((a , c)=> a + c.cal , 0);
+    console.log(tes)
+
+    const tess = talamid.reduce((a, c)=>{
+        return c.cal>12  ? a+1 :a;
+    }, 0 );
+
+    console.log(tess)
+
+
+    const etud = [
+        { name: "Ayman", cal: 14, level: "2ème" },
+        { name: "Sara", cal: 9, level: "1ère" },
+        { name: "Mohammed", cal: 18, level: "2ème" },
+        { name: "Lina", cal: 13, level: "1ère" },
+        { name: "Youssef", cal: 7, level: "2ème" },
+        { name: "Amine", cal: 16, level: "1ère" },
+      ];
+      
+  const levelsatus = etud.reduce((acc , curr)=>{
+    if(!acc[curr.level]){
+        acc[curr.level] = {total : 0 , count : 0}
+    }
+    acc[curr.level].total  += curr.cal;
+    acc[curr.level].count++;
+    return acc;
+  }, {})
+
+
+  for(let level in levelsatus){
+    const stat = levelsatus[level]
+    stat.avg = stat.total / stat.count
+  }
+
+
+  console.log(levelsatus);
+
+   const successTalamid = etud.filter(e=> e.cal> 10 ).sort((a , b) => b.cal - a.cal).map(e=> e.name)
+   console.log(successTalamid)
+      
+
+
+
       
