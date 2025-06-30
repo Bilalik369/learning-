@@ -1,3 +1,5 @@
+import { count } from "console";
+
 const users = [
     { name: "Ahmed", age: 25 },
     { name: "Akram", age: 17 },
@@ -132,7 +134,64 @@ const user = [
    const successTalamid = etud.filter(e=> e.cal> 10 ).sort((a , b) => b.cal - a.cal).map(e=> e.name)
    console.log(successTalamid)
       
+   const employees = [
+    { name: "Ali", salary: 3000, department: "IT" },
+    { name: "Sara", salary: 2500, department: "HR" },
+    { name: "Omar", salary: 4000, department: "IT" },
+    { name: "Nadia", salary: 3500, department: "Finance" },
+    { name: "Khalid", salary: 2800, department: "HR" },
+    { name: "Laila", salary: 4200, department: "Finance" },
+  ];
+  
+  const deptStats = employees.reduce((acc, cur) => {
+    if (!acc[cur.department]) {
+      acc[cur.department] = { totalSalary: 0, count: 0 };
+    }
+    acc[cur.department].totalSalary += cur.salary;
+    acc[cur.department].count++;
+    return acc;
+  }, {});
+  
+
+  for (let dept in deptStats) {
+    const stat = deptStats[dept];
+    stat.avgSalary = stat.totalSalary / stat.count;
+  }
+  
+  console.log(deptStats);
 
 
+  const productss = [
+    { name: "Laptop", price: 1200, category: "Electronics" },
+    { name: "Smartphone", price: 800, category: "Electronics" },
+    { name: "Shirt", price: 50, category: "Clothing" },
+    { name: "Jeans", price: 70, category: "Clothing" },
+    { name: "Coffee Maker", price: 100, category: "Home Appliances" },
+    { name: "Microwave", price: 150, category: "Home Appliances" },
+    { name: "Microwave", price: 150, category: "Home Appliances" },
+  ];
 
-      
+
+  const stats = {}
+
+  for(let i = 0 ; i<productss.length ; i++){
+    const product = productss[i];
+    const category = product.category
+
+    if(!stats[category]){
+        stats[category]  = {count : 0,  totalPrice : 0}
+    }
+
+
+    stats[category].count++;
+    stats[category].totalPrice += product.price;
+
+
+  }
+
+  for(const category in stats){
+    stats[category].avgPrice = stats[category].totalPrice / stats[category].count;
+  }
+  console.log(stats)
+
+  
