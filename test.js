@@ -194,9 +194,6 @@ const user = [
   }
   console.log(stats)
 
-<<<<<<< HEAD
-  
-=======
 
 
 
@@ -386,4 +383,3 @@ const red = arred.reduce((a , c)=>{
 console.log(red)
 
 
->>>>>>> 062d788 (qulque)
