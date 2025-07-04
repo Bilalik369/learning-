@@ -383,3 +383,99 @@ const red = arred.reduce((a , c)=>{
 console.log(red)
 
 
+const emplo = [
+  { name: "Ali", salary: 3000, department: "IT" },
+  { name: "Sara", salary: 2500, department: "HR" },
+  { name: "Omar", salary: 4000, department: "IT" },
+  { name: "Nadia", salary: 3500, department: "Finance" },
+  { name: "Khalid", salary: 2800, department: "HR" },
+  { name: "Laila", salary: 4200, department: "Finance" },
+];
+
+
+const max = emplo.reduce((a, c) => {
+  if (!a[c.department]) {
+    a[c.department] = c;
+  } else {
+    if (c.salary > a[c.department].salary) {
+      a[c.department] = c; 
+    }
+  }
+  return a;
+}, {});
+console.log(max)
+
+
+const students = [
+  { name: "Ayoub", grade: 15, major: "Math" },
+  { name: "Salma", grade: 18, major: "Physics" },
+  { name: "Yassine", grade: 17, major: "Math" },
+  { name: "Imane", grade: 19, major: "Physics" },
+  { name: "Karim", grade: 16, major: "Biology" },
+  { name: "Rania", grade: 17.5, major: "Biology" },
+];
+
+const grd = students.reduce((a ,c)=>{
+
+  if(!a[c.major]){
+    a[c.major] = c
+  }else{
+    if(c.grade > a[c.major].grade){
+      a[c.major] = c
+    }
+  }
+  return a;
+
+} , {})
+
+
+const name = Object.values(grd).map(e=>e.name)
+console.log(name)
+console.log(grd)
+
+
+const messages = [
+  { user: "Ayoub", text: "Salam" },
+  { user: "Imane", text: "Labas?" },
+  { user: "Ayoub", text: "Kif dayra?" },
+  { user: "Karim", text: "Hmd" },
+  { user: "Imane", text: "Shukran" },
+  { user: "Ayoub", text: "Mzyan" },
+];
+
+
+const nbru = messages.reduce((a , c)=>{
+  if(!a[c.user]){
+    a[c.user] = {user : c.user , count : 1};
+  }
+  else{
+    a[c.user].count++;
+
+  }
+ return a;
+
+} , {})
+console.log(nbru)
+
+
+const employes = [
+  { name: "Ali", salary: 3000, department: "IT" },
+  { name: "Sara", salary: 2500, department: "HR" },
+  { name: "Omar", salary: 4000, department: "IT" },
+  { name: "Nadia", salary: 3500, department: "Finance" },
+  { name: "Khalid", salary: 2800, department: "HR" },
+  { name: "Laila", salary: 4200, department: "Finance" },
+];
+
+
+const empl = employes.reduce((a , c)=>{
+  if(!a[c.department]){
+    a[c.department] = { total : 0 , count : 1 };
+
+  }else{
+    a[c.department].total =+ c.salary;
+    a[c.department].count ++;
+  }
+  return a;
+} , {})
+console.log(empl)
