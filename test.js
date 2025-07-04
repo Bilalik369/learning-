@@ -194,4 +194,196 @@ const user = [
   }
   console.log(stats)
 
+<<<<<<< HEAD
   
+=======
+
+
+
+const branches = [
+  {
+    name: "Casablanca",
+    sales: [
+      { product: "Laptop", price: 8000, quantity: 3 },
+      { product: "Phone", price: 5000, quantity: 5 },
+      { product: "Mouse", price: 100, quantity: 20 },
+    ]
+  },
+  {
+    name: "Rabat",
+    sales: [
+      { product: "Laptop", price: 8500, quantity: 2 },
+      { product: "Phone", price: 4800, quantity: 4 },
+      { product: "Keyboard", price: 300, quantity: 10 },
+    ]
+  },
+  {
+    name: "Marrakech",
+    sales: [
+      { product: "Laptop", price: 8200, quantity: 1 },
+      { product: "Phone", price: 5100, quantity: 6 },
+      { product: "Headset", price: 600, quantity: 5 },
+    ]
+  }
+];
+
+
+function sam(a , b){
+
+  return a + b;
+
+}
+
+let res = sam(4 , 2);
+console.log(res)
+
+
+function milti( a , b){
+  return a * b;
+}
+
+console.log(milti(4 , 5))
+ 
+let b = [1, 2, 3];
+let a = [1, 2, 3]; 
+let c = b;
+
+console.log(a === b);
+console.log(c === b); 
+
+
+
+const usr = [
+  { name: "Tom", contact: { email: "t@t.com" }},
+  { name: "Bob" }
+];
+
+
+const typ = usr.filter(e => e.contact).map(e=>e.name);
+console.log(typ)
+
+
+
+const arr = [{v: 1}, {v: -2}, {v: 3}];
+
+const positiveValues = arr.reduce((acc, item) => {
+  if (item.v > 0) {
+    acc.push(item.v);
+  }
+  return acc;
+}, []);
+
+console.log(positiveValues); 
+
+
+
+const fawakih = ["banan " , "banan" , "pomme" , "poe"] 
+
+//  Retourner le double des nombres pairs d’un tableau.
+const numr = [1, 2, 3, 4, 5, 6];
+
+const pair = numr.filter(e=>e % 2 == 0).map(e=>e * 2)
+console.log(pair)
+
+
+
+
+// Récupérer un tableau des `city` depuis une liste d’objets `users`.
+const nass = [
+  { name: "Alice", address: { city: "Paris" }},
+  { name: "Bob", address: { city: "Lyon" }}
+]
+
+const city = nass.map(e=> e.address).map(e=> e.city)
+console.log(city)
+
+
+// Transformer un tableau en objet regroupant les éléments par role.
+
+
+
+const people = [
+  { name: "Tom", role: "admin" },
+  { name: "Anna", role: "user" },
+  { name: "Sam", role: "admin" }
+];
+
+const rle = people.reduce((a ,c)=> {
+  if(!a[c.role]){
+    a[c.role] = []; 
+  }
+
+  a[c.role].push(c);
+  return a;
+} , {})
+
+console.log(rle)
+
+
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const disir =  fruits.reduce((a , fruit)=>{
+
+a[fruit] = (a[fruit] || 0) + 1 ;
+
+return a;
+
+
+} , {})
+console.log(disir)
+
+
+
+const obj1 = {a:1};
+const obj2 = {b:2};
+const obj3 = {c:3};
+
+const totalobjet = { ...obj1 , ...obj2 , ...obj3}
+
+console.log(totalobjet);
+
+
+const peoplee = [
+  { name: "Alice", age: 25 },
+  { name: "Eve", age: 30 }
+];
+ const eve = peoplee.find(e=> e.name === "Eve") ?.age
+ console.log(eve)
+
+
+ function sum(a , b , c , d){
+   return a + b+c +d;
+ }
+ console.log(sum(1 ,2  ,3 ,4 ))
+ 
+ function zid(...nbr){
+    return nbr.reduce((a , c)=> a + c , 0)
+ }
+console.log(zid(1 ,2  ,3 ,4))
+
+
+const arrr = [1, 2, 4, 5];
+
+const sup = arrr.filter(e=> e>3).map(e=> e * 2)
+
+console.log(sup)
+
+const ar = [1,2,3];
+
+const reseve = [];
+
+for( let i = ar.length - 1 ; i >= 0 ; i--){
+   reseve.push(ar[i])
+}
+console.log(reseve)
+
+
+const arred = [1,2,3];
+
+const red = arred.reduce((a , c)=>{
+   return [c , ...a]
+}, [])
+console.log(red)
+
+
+>>>>>>> 062d788 (qulque)
