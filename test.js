@@ -470,10 +470,10 @@ const employes = [
 
 const empl = employes.reduce((a , c)=>{
   if(!a[c.department]){
-    a[c.department] = { total : 0 , count : 1 };
+    a[c.department] = { totaltest : c.salary , count : 1 };
 
   }else{
-    a[c.department].total =+ c.salary;
+    a[c.department].totaltest += c.salary;
     a[c.department].count ++;
   }
   return a;
