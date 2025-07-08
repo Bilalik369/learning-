@@ -479,3 +479,67 @@ const empl = employes.reduce((a , c)=>{
   return a;
 } , {})
 console.log(empl)
+
+
+const apprenants = [
+  {
+    name: "Aya",
+    skills: [
+      { name: "HTML", score: 90 },
+      { name: "CSS", score: 80 },
+      { name: "JavaScript", score: 75 },
+    ],
+  },
+  {
+    name: "Youssef",
+    skills: [
+      { name: "HTML", score: 40 },
+      { name: "CSS", score: 50 },
+      { name: "JavaScript", score: 35 },
+    ],
+  },
+  {
+    name: "Salma",
+    skills: [
+      { name: "HTML", score: 95 },
+      { name: "CSS", score: 90 },
+      { name: "JavaScript", score: 100 },
+    ],
+  },
+];
+
+
+const apprenantsWithAverage = apprenants.map(apprenant => {
+  const total = apprenant.skills.reduce((sum, skill) => sum + skill.score, 0);
+  const average = total / apprenant.skills.length;
+  return {
+    name: apprenant.name,
+    average: parseFloat(average.toFixed(2)),
+  };
+});
+
+
+const apprenantsValidés = apprenantsWithAverage.filter(apprenant => apprenant.average >= 60);
+
+
+
+const bestApprenant = apprenantsWithAverage.reduce((best, current) => {
+  return current.average > best.average ? current : best;
+});
+
+
+const finalResult = apprenantsWithAverage.map(apprenant => {
+  return {
+    name: apprenant.name,
+    average: apprenant.average,
+    status: apprenant.average >= 60 ? "validée" : "non validée",
+  };
+});
+
+console.log("Apprenants avec moyenne :", apprenantsWithAverage);
+console.log("Apprenants validés :", apprenantsValidés);
+console.log("Meilleur apprenant :", bestApprenant);
+console.log("Résultat final :", finalResult);
+
+
+
