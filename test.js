@@ -582,3 +582,39 @@ const bestPresonse  = whitPreso.reduce((best , cournt)=>{
 console.log(whitPreso)
 console.log(whitPr)
 console.log(bestPresonse)
+
+
+
+const std = [
+  { name: "Sara", grades: [14, 16, 13, 15] },
+  { name: "Omar", grades: [8, 10, 7, 9] },
+  { name: "Nadia", grades: [18, 17, 19, 20] },
+];
+
+
+
+
+const studentsStatus = std.map(student => {
+  const total = student.grades.reduce((sum, grade) => sum + grade, 0);
+  const average = total / student.grades.length;
+
+  let status = "Rassab"; 
+  if (average >= 16) status = "Mumtaz"; 
+  else if (average >= 10) status = "Najah"; 
+
+  return {
+    name: student.name,
+    average: parseFloat(average.toFixed(2)),
+    status,
+  };
+});
+
+const successfulStudents = studentsStatus.filter(s => s.status !== "Rassab");
+
+const bestStudent = studentsStatus.reduce((best, current) =>
+  current.average > best.average ? current : best
+);
+
+console.log( studentsStatus);
+console.log( successfulStudents);
+console.log( bestStudent);
