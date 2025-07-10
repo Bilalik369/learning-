@@ -543,3 +543,42 @@ console.log("Résultat final :", finalResult);
 
 
 
+const appr = [
+  {
+    name: "Bilal",
+    presence: [1, 1, 0, 1, 1, 1, 0], 
+  },
+  {
+    name: "Aya",
+    presence: [1, 0, 1, 1, 1, 1, 1],
+  },
+  {
+    name: "Youssef",
+    presence: [0, 0, 1, 0, 1, 0, 1],
+  }
+];
+
+const whitPreso = appr.map(apprenant =>{
+  const total = apprenant.presence.length;
+  const pres = apprenant.presence.reduce((a , c)=> a + c , 0);
+  const proncatage = (pres / total) * 100
+  return {
+    name : apprenant.name,
+    presencePourcentage : parseFloat(proncatage.toFixed(2))
+  }
+  
+  
+
+})
+const whitPr = whitPreso.filter(e=> e.presencePourcentage >= 80);
+
+const bestPresonse  = whitPreso.reduce((best , cournt)=>{
+  return cournt.presencePourcentage > best.presencePourcentage ? cournt : best
+})
+
+
+
+
+console.log(whitPreso)
+console.log(whitPr)
+console.log(bestPresonse)
