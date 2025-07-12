@@ -543,20 +543,20 @@
 
 
 
-// // const appr = [
-// //   {
-// //     name: "Bilal",
-// //     presence: [1, 1, 0, 1, 1, 1, 0], 
-// //   },
-// //   {
-// //     name: "Aya",
-// //     presence: [1, 0, 1, 1, 1, 1, 1],
-// //   },
-// //   {
-// //     name: "Youssef",
-// //     presence: [0, 0, 1, 0, 1, 0, 1],
-// //   }
-// // ];
+// const appr = [
+//   {
+//     name: "Bilal",
+//     presence: [1, 1, 0, 1, 1, 1, 0], 
+//   },
+//   {
+//     name: "Aya",
+//     presence: [1, 0, 1, 1, 1, 1, 1],
+//   },
+//   {
+//     name: "Youssef",
+//     presence: [0, 0, 1, 0, 1, 0, 1],
+//   }
+// ];
 
 // // const whitPreso = appr.map(apprenant =>{
 // //   const total = apprenant.presence.length;
@@ -920,3 +920,43 @@ const trtib = mapess.sort((a , b)=> b.bestnot - a.bestnot)
 console.log(mapess)
 console.log(trtib)
 console.log(thebostone)
+
+
+
+
+const students = [
+  {
+    name: "Bilal",
+    grades: {
+      math: [15, 14, 16, 17, 14, 13, 15, 16],
+      english: [16, 15, 14, 17, 18, 19, 15, 14],
+      physics: [12, 13, 14, 13, 12, 11, 10, 14],
+    }
+  },
+  {
+    name: "Aya",
+    grades: {
+      math: [18, 17, 16, 19, 18, 20, 17, 18],
+      english: [15, 14, 16, 15, 14, 13, 15, 16],
+      physics: [17, 18, 16, 15, 17, 18, 17, 16],
+    }
+  },
+  {
+    name: "Youssef",
+    grades: {
+      math: [10, 9, 8, 7, 10, 11, 12, 8],
+      english: [12, 11, 10, 10, 13, 14, 12, 13],
+      physics: [9, 8, 7, 8, 6, 7, 9, 8],
+    }
+  }
+];
+
+
+const nadi = student.map(obj=> obj.Object.values(grades)[0])
+
+console.log(nadi)
+
+
+
+
+
