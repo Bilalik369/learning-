@@ -952,11 +952,46 @@ const students = [
 ];
 
 
-const nadi = student.map(obj=> obj.Object.values(grades)[0])
-
-console.log(nadi)
+const months = students[0].grades.math.map((_, index) => index);
 
 
+const monthlyReport = months.map(monthIndex => {
+  const studentData = students.map(std => {
+    const subjectAverages = Object.entries(std.grades).reduce((acc, [subject, grades]) => {
+      acc[subject] = grades[monthIndex];
+      return acc;
+    }, {});
+
+    const subjectEntries = Object.entries(subjectAverages);
+    const total = subjectEntries.reduce((sum, [_, val]) => sum + val, 0);
+    const average = total / subjectEntries.length;
+
+    const weakest = subjectEntries.reduce((min, curr) => curr[1] < min[1] ? curr : min);
+
+    return {
+      name: std.name,
+      subjectAverages,
+      average: +average.toFixed(2),
+      weakestSubject: weakest[0],
+      weakestGrade: weakest[1],
+    };
+  });
+
+  const bestStudent = studentData.reduce((best, curr) => curr.average > best.average ? curr : best);
+
+  return {
+    month: monthIndex + 1,
+    students: studentData,
+    bestStudent
+  };
+});
 
 
 
+monthlyReport.forEach(rep => {
+  console.log(`${rep.month}`);
+  rep.students.forEach(s => {
+    console.log(` ${s.name}  ${s.average}  ${s.weakestSubject} (${s.weakestGrade})`);
+  });
+  console.log(` ${rep.bestStudent.name} ${rep.bestStudent.average}`);
+});
