@@ -952,46 +952,32 @@ const students = [
 ];
 
 
-const months = students[0].grades.math.map((_, index) => index);
+const generale = students.map(std=>{
+
+const avrg = {}
+
+for (let subject in std.grades){
+  const grades = std.grades[subject]
+  const redu = grades.reduce((a , c)=> a + c , 0)/grades.length
+  avrg[subject] = redu
+
+  
+}
+
+return {
+  name : std.name,
+  avrg
+}
+}).map(avg => {
+  const obj = Object.values(avg.avrg)
+  const hh = obj.reduce((a , c)=> a+ c , 0)/obj.length
+
+ return {
+  name : avg.name,
+  myengenerale : hh.toFixed(2),
+
+ }
+})
 
 
-const monthlyReport = months.map(monthIndex => {
-  const studentData = students.map(std => {
-    const subjectAverages = Object.entries(std.grades).reduce((acc, [subject, grades]) => {
-      acc[subject] = grades[monthIndex];
-      return acc;
-    }, {});
-
-    const subjectEntries = Object.entries(subjectAverages);
-    const total = subjectEntries.reduce((sum, [_, val]) => sum + val, 0);
-    const average = total / subjectEntries.length;
-
-    const weakest = subjectEntries.reduce((min, curr) => curr[1] < min[1] ? curr : min);
-
-    return {
-      name: std.name,
-      subjectAverages,
-      average: +average.toFixed(2),
-      weakestSubject: weakest[0],
-      weakestGrade: weakest[1],
-    };
-  });
-
-  const bestStudent = studentData.reduce((best, curr) => curr.average > best.average ? curr : best);
-
-  return {
-    month: monthIndex + 1,
-    students: studentData,
-    bestStudent
-  };
-});
-
-
-
-monthlyReport.forEach(rep => {
-  console.log(`${rep.month}`);
-  rep.students.forEach(s => {
-    console.log(` ${s.name}  ${s.average}  ${s.weakestSubject} (${s.weakestGrade})`);
-  });
-  console.log(` ${rep.bestStudent.name} ${rep.bestStudent.average}`);
-});
+console.log(generale)
