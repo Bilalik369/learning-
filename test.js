@@ -981,3 +981,62 @@ return {
 
 
 console.log(generale)
+
+
+const studentS = [
+  {
+    name: "Bilal",
+    subjects: {
+      math: [14, 13, 15, 16, 12, 11, 14, 15],
+      physics: [12, 11, 13, 14, 13, 12, 10, 13],
+      english: [15, 14, 16, 17, 18, 17, 16, 15]
+    }
+  },
+  {
+    name: "zaka",
+    subjects: {
+      math: [17, 16, 18, 19, 18, 17, 16, 17],
+      physics: [16, 15, 17, 16, 15, 16, 15, 14],
+      english: [18, 17, 18, 18, 19, 18, 17, 18]
+    }
+  },
+  {
+    name: "hiba",
+    subjects: {
+      math: [10, 11, 9, 8, 10, 9, 10, 9],
+      physics: [8, 9, 7, 6, 8, 7, 9, 8],
+      english: [11, 12, 10, 11, 13, 12, 11, 12]
+    }
+  }
+];
+
+
+
+const numbreOfManth = studentS[0].subjects.math.length;
+
+const months = Array.from({ length: numbreOfManth }, (_, i) => i + 1);
+
+const studentwith = studentS.map(std => {
+  const manthstat = months.map(month => {
+    const subjects = Object.keys(std.subjects);
+    const grades = subjects.map(sub => {
+      return {
+        subject: sub,
+        grade: std.subjects[sub][month - 1]
+      };
+    });
+
+    return {
+      month,
+      grades
+    };
+  });
+
+  return {
+    name: std.name,
+    months: manthstat
+  };
+});
+
+console.log(JSON.stringify(studentwith, null, 2));
+

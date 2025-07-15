@@ -22,6 +22,7 @@ const test = users.map(std=>{
   red
  }
 }).sort((a,b)=> b.red - a.red).map(user => {
+console.log(`${user.name}, hours: ${user.name}, status: ${ user.red >= 140 ? "exellent" : user.red >= 100 ? "good" : "bad" }`)
 
 user.status = user.red >= 140 ? "exellent" : user.red >= 100 ? "good" : "bad" 
 return user
