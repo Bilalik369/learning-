@@ -831,212 +831,319 @@
 // console.log(nadi)
 // console.log(layab)
 // console.log(trtob)
-const student = [
-  {
-    name: "Bilal",
-    grades: {
-      math: 15,
-      physics: 12,
-      history: 8,
-      english: 16,
-      biology: 14
-    }
-  },
-  {
-    name: "Aya",
-    grades: {
-      math: 18,
-      physics: 17,
-      history: 16,
-      english: 15,
-      biology: 19
-    }
-  },
-  {
-    name: "Youssef",
-    grades: {
-      math: 8,
-      physics: 9,
-      history: 7,
-      english: 10,
-      biology: 6
-    }
-  }
-];
+// const student = [
+//   {
+//     name: "Bilal",
+//     grades: {
+//       math: 15,
+//       physics: 12,
+//       history: 8,
+//       english: 16,
+//       biology: 14
+//     }
+//   },
+//   {
+//     name: "Aya",
+//     grades: {
+//       math: 18,
+//       physics: 17,
+//       history: 16,
+//       english: 15,
+//       biology: 19
+//     }
+//   },
+//   {
+//     name: "Youssef",
+//     grades: {
+//       math: 8,
+//       physics: 9,
+//       history: 7,
+//       english: 10,
+//       biology: 6
+//     }
+//   }
+// ];
 
-const mapess = student.map(std=>{
+// const mapess = student.map(std=>{
 
-  const obj = Object.values(std.grades)
-  const lengh = obj.length
-  const red = obj.reduce((a , c)=> a + c, 0);
-  const myngenr = red / lengh 
+//   const obj = Object.values(std.grades)
+//   const lengh = obj.length
+//   const red = obj.reduce((a , c)=> a + c, 0);
+//   const myngenr = red / lengh 
  
 
-  const bestnot = obj.reduce((best , cournt)=>{
-       return cournt > best ? cournt : best
-  })
+//   const bestnot = obj.reduce((best , cournt)=>{
+//        return cournt > best ? cournt : best
+//   })
 
-  let status = "rasb"
-  if(myngenr >= 16) status = "wa3r"
-  else if(myngenr >10  && myngenr <16) status = "ma3lilkch"
-  const test = Object.keys(std.grades)
+//   let status = "rasb"
+//   if(myngenr >= 16) status = "wa3r"
+//   else if(myngenr >10  && myngenr <16) status = "ma3lilkch"
+//   const test = Object.keys(std.grades)
   
-  const mjhd = test.reduce((best , cournt)=>{
-    return std.grades[cournt] > std.grades[best]? cournt : best
-  })
-  return {
-     name : std.name,
-     myngenr,
-     bestnot ,
-     status,
-     mjhd,
-  }
+//   const mjhd = test.reduce((best , cournt)=>{
+//     return std.grades[cournt] > std.grades[best]? cournt : best
+//   })
+//   return {
+//      name : std.name,
+//      myngenr,
+//      bestnot ,
+//      status,
+//      mjhd,
+//   }
   
  
 
-})
+// })
 
-const thebostone = mapess.reduce((a , c)=>{
-  return c.bestnot > a.bestnot ? c : a
-})
+// const thebostone = mapess.reduce((a , c)=>{
+//   return c.bestnot > a.bestnot ? c : a
+// })
 
-const kola = student.map(std=>{
-  const kys = Object.keys(std.grades)
-  const hani = kys.reduce((best, cournt)=>{
-      return std.grades[cournt] > std.grades[best]  ? cournt : best
-  })
+// const kola = student.map(std=>{
+//   const kys = Object.keys(std.grades)
+//   const hani = kys.reduce((best, cournt)=>{
+//       return std.grades[cournt] > std.grades[best]  ? cournt : best
+//   })
 
-  return {
-    name : std.name,
-    bestsubject : hani, 
-    bestgrade : std.grades[hani]
+//   return {
+//     name : std.name,
+//     bestsubject : hani, 
+//     bestgrade : std.grades[hani]
+//   }
+// })
+
+// console.log(kola)
+
+// const trtib = mapess.sort((a , b)=> b.bestnot - a.bestnot)
+
+// console.log(mapess)
+// console.log(trtib)
+// console.log(thebostone)
+
+
+
+
+// const students = [
+//   {
+//     name: "Bilal",
+//     grades: {
+//       math: [15, 14, 16, 17, 14, 13, 15, 16],
+//       english: [16, 15, 14, 17, 18, 19, 15, 14],
+//       physics: [12, 13, 14, 13, 12, 11, 10, 14],
+//     }
+//   },
+//   {
+//     name: "Aya",
+//     grades: {
+//       math: [18, 17, 16, 19, 18, 20, 17, 18],
+//       english: [15, 14, 16, 15, 14, 13, 15, 16],
+//       physics: [17, 18, 16, 15, 17, 18, 17, 16],
+//     }
+//   },
+//   {
+//     name: "Youssef",
+//     grades: {
+//       math: [10, 9, 8, 7, 10, 11, 12, 8],
+//       english: [12, 11, 10, 10, 13, 14, 12, 13],
+//       physics: [9, 8, 7, 8, 6, 7, 9, 8],
+//     }
+//   }
+// ];
+
+
+// const generale = students.map(std=>{
+
+// const avrg = {}
+
+// for (let subject in std.grades){
+//   const grades = std.grades[subject]
+//   const redu = grades.reduce((a , c)=> a + c , 0)/grades.length
+//   avrg[subject] = redu
+
+  
+// }
+
+// return {
+//   name : std.name,
+//   avrg
+// }
+// }).map(avg => {
+//   const obj = Object.values(avg.avrg)
+//   const hh = obj.reduce((a , c)=> a+ c , 0)/obj.length
+
+//  return {
+//   name : avg.name,
+//   myengenerale : hh.toFixed(2),
+
+//  }
+// })
+
+
+// console.log(generale)
+
+
+// const studentS = [
+//   {
+//     name: "Bilal",
+//     subjects: {
+//       math: [14, 13, 15, 16, 12, 11, 14, 15],
+//       physics: [12, 11, 13, 14, 13, 12, 10, 13],
+//       english: [15, 14, 16, 17, 18, 17, 16, 15]
+//     }
+//   },
+//   {
+//     name: "zaka",
+//     subjects: {
+//       math: [17, 16, 18, 19, 18, 17, 16, 17],
+//       physics: [16, 15, 17, 16, 15, 16, 15, 14],
+//       english: [18, 17, 18, 18, 19, 18, 17, 18]
+//     }
+//   },
+//   {
+//     name: "hiba",
+//     subjects: {
+//       math: [10, 11, 9, 8, 10, 9, 10, 9],
+//       physics: [8, 9, 7, 6, 8, 7, 9, 8],
+//       english: [11, 12, 10, 11, 13, 12, 11, 12]
+//     }
+//   }
+// ];
+
+
+
+// const numbreOfManth = studentS[0].subjects.math.length;
+
+// const months = Array.from({ length: numbreOfManth }, (_, i) => i + 1);
+
+// const studentwith = studentS.map(std => {
+//   const manthstat = months.map(month => {
+//     const subjects = Object.keys(std.subjects);
+//     const grades = subjects.map(sub => {
+//       return {
+//         subject: sub,
+//         grade: std.subjects[sub][month - 1]
+//       };
+//     });
+
+//     return {
+//       month,
+//       grades
+//     };
+//   });
+
+//   return {
+//     name: std.name,
+//     months: manthstat
+//   };
+// });
+
+// console.log(JSON.stringify(studentwith, null, 2));
+
+for(let i = 0 ; i<=20 ; i++){
+  if(i % 2 ===0){
+    console.log(i)
   }
-})
+}
+console.log("next")
+const numbers = [10, 20, 15, 5, 30];
 
-console.log(kola)
+let sum = 0
 
-const trtib = mapess.sort((a , b)=> b.bestnot - a.bestnot)
+for(let i = 0 ; i<numbers.length ; i++){
+  sum += numbers[i]
+  
+}
+console.log(sum)
 
-console.log(mapess)
-console.log(trtib)
-console.log(thebostone)
+console.log("next")
 
 
+const fruits = ["pomme", "banane", "orange"];
 
+let revers = []
+for(let i =fruits.length - 1 ; i >=0 ; i--){
+  revers.push(fruits[i])
+
+}
+console.log(revers)
+console.log("next")
+
+const nbr = [ 1 , 2 , 3]
+
+let nbt = []
+for(let i = nbr.length -1 ; i>=0 ; i--){
+  nbt.push(nbr[i])
+}
+console.log(nbt)
+
+console.log("next")
 
 const students = [
-  {
-    name: "Bilal",
-    grades: {
-      math: [15, 14, 16, 17, 14, 13, 15, 16],
-      english: [16, 15, 14, 17, 18, 19, 15, 14],
-      physics: [12, 13, 14, 13, 12, 11, 10, 14],
-    }
-  },
-  {
-    name: "Aya",
-    grades: {
-      math: [18, 17, 16, 19, 18, 20, 17, 18],
-      english: [15, 14, 16, 15, 14, 13, 15, 16],
-      physics: [17, 18, 16, 15, 17, 18, 17, 16],
-    }
-  },
-  {
-    name: "Youssef",
-    grades: {
-      math: [10, 9, 8, 7, 10, 11, 12, 8],
-      english: [12, 11, 10, 10, 13, 14, 12, 13],
-      physics: [9, 8, 7, 8, 6, 7, 9, 8],
-    }
-  }
+  { name: "Bilal", grades: [14, 15, 13, 16] },
+  { name: "Aya", grades: [17, 18, 16, 19] },
+  { name: "Youssef", grades: [10, 12, 11, 13] },
 ];
+let bro = []
 
+for(let i = 0 ; i<students.length ; i++){
+  const grade = students[i].grades
+  const red = grade.reduce((a, c)=> a + c , 0)
+  const lengh = grade.length
+  const moyenne = red / lengh
 
-const generale = students.map(std=>{
+  bro.push( {name:students[i].name, moyenne})
 
-const avrg = {}
+}
+console.log(bro)
 
-for (let subject in std.grades){
-  const grades = std.grades[subject]
-  const redu = grades.reduce((a , c)=> a + c , 0)/grades.length
-  avrg[subject] = redu
-
+let sums = 0 ;
+for(let i=1 ; i<=100 ; i++){
+  if(i % 2 ===0){
+    sums+= i;
+  }
   
 }
 
-return {
-  name : std.name,
-  avrg
+console.log(sums)
+
+
+
+const fruitss= ["pomme", "banane", "orange"];
+let reve = []
+for(let i = fruitss.length - 1; i>=0 ; i--){
+
+
+  reve.push(fruitss[i])
 }
-}).map(avg => {
-  const obj = Object.values(avg.avrg)
-  const hh = obj.reduce((a , c)=> a+ c , 0)/obj.length
-
- return {
-  name : avg.name,
-  myengenerale : hh.toFixed(2),
-
- }
-})
+console.log(reve)
 
 
-console.log(generale)
-
-
-const studentS = [
-  {
-    name: "Bilal",
-    subjects: {
-      math: [14, 13, 15, 16, 12, 11, 14, 15],
-      physics: [12, 11, 13, 14, 13, 12, 10, 13],
-      english: [15, 14, 16, 17, 18, 17, 16, 15]
-    }
-  },
-  {
-    name: "zaka",
-    subjects: {
-      math: [17, 16, 18, 19, 18, 17, 16, 17],
-      physics: [16, 15, 17, 16, 15, 16, 15, 14],
-      english: [18, 17, 18, 18, 19, 18, 17, 18]
-    }
-  },
-  {
-    name: "hiba",
-    subjects: {
-      math: [10, 11, 9, 8, 10, 9, 10, 9],
-      physics: [8, 9, 7, 6, 8, 7, 9, 8],
-      english: [11, 12, 10, 11, 13, 12, 11, 12]
-    }
-  }
+const student = [
+  { name: "Bilal", grades: [14, 15, 13, 16] },
+  { name: "Aya", grades: [17, 18, 16, 19] },
+  { name: "Youssef", grades: [10, 12, 11, 13] },
 ];
 
+let tilmid = []
+
+for(let i = 0 ; i<student.length ; i++){
+    const grad = student[i].grades
+    const total = grad.reduce((a, c)=> a + c , 0) 
+    const lengh = grad.length
+    const moy =  total / lengh
+    
+   tilmid.push({name : student[i].name , moyenne : moy})
+} 
+tilmid.sort((a , b)=> b.moyenne - a.moyenne)
+
+console.log(tilmid)
 
 
-const numbreOfManth = studentS[0].subjects.math.length;
 
-const months = Array.from({ length: numbreOfManth }, (_, i) => i + 1);
 
-const studentwith = studentS.map(std => {
-  const manthstat = months.map(month => {
-    const subjects = Object.keys(std.subjects);
-    const grades = subjects.map(sub => {
-      return {
-        subject: sub,
-        grade: std.subjects[sub][month - 1]
-      };
-    });
+let phrase = "Je suis développeur Full Stack";
 
-    return {
-      month,
-      grades
-    };
-  });
+const test = phrase.split("").filter(e=> e !== " ").length
 
-  return {
-    name: std.name,
-    months: manthstat
-  };
-});
-
-console.log(JSON.stringify(studentwith, null, 2));
-
+console.log(test)
