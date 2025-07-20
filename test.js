@@ -1144,6 +1144,34 @@ console.log(tilmid)
 
 let phrase = "Je suis développeur Full Stack";
 
-const test = phrase.split("").filter(e=> e !== " ").length
+const ray = phrase.split("").filter(e=> e !== " ").length
 
-console.log(test)
+console.log(ray)
+
+
+
+const arr =  [
+  {name : "brahime" , subject : { }},
+  {name : "ayoub" , note : 13},
+  {name : "anass" , note : 1},
+  {name : "salma" , note : 11},
+]
+
+const valid= arr.filter(e=> e.note< 10).map(e => e.name)
+console.log(valid)
+
+
+
+
+
+const arrr = [2, 5, 3, 5, 7, 3, 7, 7, 2];
+
+
+const red = arrr.reduce((a, c)=>{
+  a[c] = (a[c] || 0) + 1
+  return a
+}, {})
+const ee =
+
+
+console.log(red)
