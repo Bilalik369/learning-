@@ -1175,3 +1175,47 @@ const ee =
 
 
 console.log(red)
+
+
+
+
+const users = [
+  {
+    name: "Sara",
+    purchases: [200, 300, 600],
+  },
+  {
+    name: "Youssef",
+    purchases: [150, 50],
+  },
+  {
+    name: "Lina",
+    purchases: [400, 700, 200],
+  },
+  {
+    name: "Bilal",
+    purchases: [1000, 500, 100],
+  },
+];
+
+
+const trt = users.map(user=>{
+  const max = user.purchases.reduce((a , c)=>a + c , 0)
+
+  return {
+    name : user.name,
+    total : max
+  }
+})
+const tid = trt.filter(e=>e.total>1000)
+const nb = trt.reduce((best ,courn)=>{
+  return courn.total > best.total ? courn: best
+
+})
+const sor = trt.sort((a , b )=> b.total - a.total)
+
+console.log(trt)
+console.log(tid)
+console.log(nb)
+console.log(sor)
+
