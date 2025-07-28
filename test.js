@@ -1219,3 +1219,54 @@ console.log(tid)
 console.log(nb)
 console.log(sor)
 
+const user = [
+  { name: "Sara", purchases: [1, 2, 3, 2] },
+  { name: "Youssef", purchases: [2, 3, 4, 2] },
+  { name: "Lina", purchases: [2, 5, 3, 2, 2] },
+  { name: "Bilal", purchases: [6, 2, 3] },
+];
+
+const flat = user.flatMap(use=>use.purchases)
+
+const hh = flat.reduce((a ,c)=>{
+  if(!a[c]){
+    a[c] = {broduct : Number(c), count :  0}
+  }
+  a[c].count++;
+  return a;
+}, {})
+
+
+const thebest = Object.values(hh).reduce((best , cournt)=>{
+  return cournt.count> best.count ?cournt : best
+})
+
+console.log(hh)
+console.log(thebest)
+
+
+
+const userss = [
+  { name: "Sara", purchases: ["milk", "bread", "milk", "cheese"] },
+  { name: "Youssef", purchases: ["milk", "eggs", "bread", "bread"] },
+  { name: "Lina", purchases: ["milk", "bread", "cheese", "milk", "eggs"] },
+  { name: "Bilal", purchases: ["cheese", "milk", "bread"] },
+];
+
+const fla = userss.flatMap(use=>use.purchases)
+const rebtd = fla.reduce((a ,c)=>{
+  if(!a[c]){
+    a[c] = {product : c ,  count : 0}
+  }
+  a[c].count++
+  return a
+
+
+}, {})
+
+const arry = Object.values(rebtd)
+const top = arry.slice(0 , 3)
+
+console.log(rebtd)
+console.log(top)
+
