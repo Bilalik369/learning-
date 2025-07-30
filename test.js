@@ -1246,27 +1246,66 @@ console.log(thebest)
 
 
 
+// const userss = [
+//   { name: "Sara", purchases: ["milk", "bread", "milk", "cheese"] },
+//   { name: "Youssef", purchases: ["milk", "eggs", "bread", "bread"] },
+//   { name: "Lina", purchases: ["milk", "bread", "cheese", "milk", "eggs"] },
+//   { name: "Bilal", purchases: ["cheese", "milk", "bread"] },
+// ];
+
+// const fla = userss.flatMap(use=>use.purchases)
+// const rebtd = fla.reduce((a ,c)=>{
+//   if(!a[c]){
+//     a[c] = {product : c ,  count : 0}
+//   }
+//   a[c].count++
+//   return a
+
+
+// }, {})
+
+// const arry = Object.values(rebtd)
+// const top = arry.slice(0 , 3)
+
+// console.log(rebtd)
+// console.log(top)
+
 const userss = [
   { name: "Sara", purchases: ["milk", "bread", "milk", "cheese"] },
   { name: "Youssef", purchases: ["milk", "eggs", "bread", "bread"] },
   { name: "Lina", purchases: ["milk", "bread", "cheese", "milk", "eggs"] },
-  { name: "Bilal", purchases: ["cheese", "milk", "bread"] },
+  { name: "Bilal", purchases: ["cheese", "milk", "bread"] }
 ];
 
-const fla = userss.flatMap(use=>use.purchases)
-const rebtd = fla.reduce((a ,c)=>{
+const tet= userss.flatMap(usr=>usr.purchases)
+const hry =  [...new Set(tet)]
+
+const test = tet.reduce((a , c)=>{
   if(!a[c]){
-    a[c] = {product : c ,  count : 0}
+    a[c] = {count : 1}
   }
-  a[c].count++
-  return a
-
-
+  a[c].count++;
+  return a;
 }, {})
 
-const arry = Object.values(rebtd)
-const top = arry.slice(0 , 3)
 
-console.log(rebtd)
-console.log(top)
+console.log(hry)
+console.log(test)
 
+
+
+// const arrs = [{x:1}, {x:1}, {x:1} , {x:1}];
+
+// const hi =arrs.every(e=> e.x === arrs[0].x)
+
+// console.log(hi)
+
+const usee = [
+  { name: "Sara", age: 25, isActive: true },
+  { name: "Omar", age: 30, isActive: false },
+  { name: "Lina", age: 22, isActive: true },
+  { name: "Youssef", age: 28, isActive: true },
+];
+
+const ht = usee.filter(e=> e.isActive === true).sort((a , b)=> b.age - a.age).map(e=> `${e.name} ${e.age}`)
+console.log(ht)
