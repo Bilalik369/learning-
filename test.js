@@ -1309,3 +1309,15 @@ const usee = [
 
 const ht = usee.filter(e=> e.isActive === true).sort((a , b)=> b.age - a.age).map(e=> `${e.name} ${e.age}`)
 console.log(ht)
+
+
+
+
+const words = ["chat", "éléphant", "zèbre", "chien", "lion", "papillon"];
+const bt = words.sort((a ,b) => a.length -b.length)
+
+console.log(bt)
+
+
+
+const names = ["Bilal", "Imane", "Youssef", "Amal", "Zakaria", "Nour", "Omar"];
