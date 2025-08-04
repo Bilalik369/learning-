@@ -1321,3 +1321,14 @@ console.log(bt)
 
 
 const names = ["Bilal", "Imane", "Youssef", "Amal", "Zakaria", "Nour", "Omar"];
+
+const bey = (name) => {
+  return name
+    .toLowerCase()
+    .split("")
+    .filter((char) => ["e", "i", "u", "o", "a"].includes(char)).length;
+};
+
+const sorted = names.sort((a, b) => bey(b) - bey(a));
+
+console.log(sorted);
