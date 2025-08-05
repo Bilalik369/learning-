@@ -1332,3 +1332,90 @@ const bey = (name) => {
 const sorted = names.sort((a, b) => bey(b) - bey(a));
 
 console.log(sorted);
+
+
+
+const  arry = [1, 2, 3, 4, 5];
+
+const modfi = [...arry]
+modfi[3] = 0;
+
+const outpot = [...arry, ...modfi]
+console.log(outpot)
+
+const userrs = [ 
+  { 
+    id: 1, 
+    name: "Ali", 
+    age: 25, 
+    isActive: true, 
+    email: "ali@mail.com", 
+    orders: [10, 20, 30] 
+  }, 
+  { 
+    id: 2, 
+    name: "Nora", 
+    age: 30, 
+    isActive: false, 
+    email: "nora@mail.com", 
+    orders: [5, 15] 
+  }, 
+  { 
+    id: 3, 
+    name: "Omar", 
+    age: 19, 
+    isActive: true, 
+    email: "omar@mail.com", 
+    orders: [40, 20, 15] 
+  }, 
+  { 
+    id: 4, 
+    name: "Sara", 
+    age: 17, 
+    isActive: true, 
+    email: "sara@mail.com", 
+    orders: [] 
+  } 
+]; 
+
+
+const tey = userrs.map(e=>{
+  return {
+    name : e.name,
+    age : e.age
+  }
+})
+console.log(tey)
+
+const map = userrs.map(e=> `${e.name} (${e.email})`)
+console.log(map)
+
+const filtre = userrs.filter(e=> e.isActive===true ).map(e=>e.name)
+console.log(filtre)
+
+
+
+const filtre1 = userrs.filter(e=> e.orders.length >0)
+console.log(filtre1)
+
+
+const reduce = userrs.reduce(( total  , user)=> total + user.orders.reduce((a , c)=>a + c , 0) , 0 )
+console.log(reduce)
+
+
+const redd = userrs.reduce((a ,c)=> a + c.orders.length,0)
+console.log(redd)
+
+const fine = userrs.find(e=> e.name==="Nora")
+console.log(fine)
+
+const finde  = userrs.find(e=> e.isActive === false)
+console.log(finde)
+
+
+const some  = userrs.some(e=> e.age<18)
+console.log(some)
+
+const some1 = userrs.some(e=> e.orders.length ===0)
+console.log(some1)
+
