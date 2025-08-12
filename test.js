@@ -1419,3 +1419,22 @@ console.log(some)
 const some1 = userrs.some(e=> e.orders.length ===0)
 console.log(some1)
 
+const bydd = userrs.every(e=> e.email !== undefined && e.email !== "" )
+console.log(bydd)
+const hhe = userrs.every(e=> e.isActive === true)
+console.log(hhe)
+
+
+const allOrders = userrs.flatMap(user => user.orders);
+
+console.log(allOrders);
+
+const sales = [
+  { product: "Laptop", quantity: 4, price: 800 },
+  { product: "Phone", quantity: 10, price: 500 },
+  { product: "Laptop", quantity: 2, price: 800 },
+  { product: "Headphones", quantity: 15, price: 50 },
+  { product: "Phone", quantity: 5, price: 500 },
+];
+
+z

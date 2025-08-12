@@ -1,0 +1,79 @@
+{
+    "userInfos": {
+      "userId_123": {
+        "fullName": "Bilal Iken",
+        "email": "bilaltest@gmail.com",
+        "phone": "+212600000000"
+      },
+      "userId_456": {
+        "fullName": "Sara Ben",
+        "email": "saratest@gmail.com",
+        "phone": "+212611111111"
+      }
+    },
+   
+    "diagnostics": {
+      "diagId_001": {
+        "userId": "userId_123",
+        "proUserId": null,
+        "clientInfo": null,
+        "diagnosticPhotoUrl": "https://storage.googleapis.com/photos/diag001.jpg",
+        "scores": {
+          "property1": 85,
+          "property2": 67,
+          "property3": 92,
+          "property4": 74,
+          "property5": 60
+        },
+        "productRecommendation": {
+          "barcode": "8901234567890",
+          "productName": "Moisturizing Cream"
+        },
+        "createdAt": "2025-08-11T14:35:00Z"
+      },
+  
+      "diagId_002": {
+        "userId": null,
+        "proUserId": "pro_789",
+        "clientInfo": {
+          "firstName": "Omar",
+          "lastName": "Ali",
+          "phone": "+212655555555"
+        },
+        "diagnosticPhotoUrl": "https://storage.googleapis.com/photos/diag002.jpg",
+        "scores": {
+          "property1": 45,
+          "property2": 70,
+          "property3": 55,
+          "property 4": 62,
+          "property5": 80
+        },
+        "productRecommendation": {
+          "barcode": "7801234567891",
+          "productName": "Anti-Aging Serum"
+        },
+        "createdAt": "2025-08-11T15:20:00Z"
+      }
+    },
+  
+    "proUsers": {
+      "pro_789": {
+        "fullName": "Dr. iken bilal",
+        "email": "pro@gmail.com.com",
+        "phone": "+212633333333",
+        "clients": {
+          "clientId_1": {
+            "firstName": "Omar",
+            "lastName": "Ali",
+            "phone": "+212655555555"
+          },
+          "clientId_2": {
+            "firstName": "Salma",
+            "lastName": "Ben",
+            "phone": "+212644444444"
+          }
+        }
+      }
+    }
+  }
+  
