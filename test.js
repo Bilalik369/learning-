@@ -1,5 +1,7 @@
 // // import { count } from "console";
 
+
+
 // // const users = [
 // //     { name: "Ahmed", age: 25 },
 // //     { name: "Akram", age: 17 },
@@ -1437,4 +1439,14 @@ const sales = [
   { product: "Phone", quantity: 5, price: 500 },
 ];
 
-z
+const hi = sales.reduce((a, c)=>{
+  if(!a[c.quantity]){
+    a[c.quantity] = { count : 0 }
+    
+  }
+ 
+  a[c.quantity].count++
+  return 
+} , {})
+
+console.log(hi)
