@@ -39,9 +39,25 @@ function sumMatrices(matrixA, matrixB) {
     return result;
 }
 
+
+function determinant(martix){
+    const n = martix.length
+
+
+    if(n===1) return martix[0][0]
+    if(n===2) return martix[0][0]*martix[1][1] - martix[1][0] * martix[0][1] 
+
+    let det = 0
+    for(let col = 0; col<n; col++){
+        let subMatrix = martix.slice(1).map(row => row.filter((_, j)=> j !== col))
+        det += ((col % 2 === 0 ? 1 : -1)) * determinant(subMatrix    )
+    }
+    return det
+}
+
 (async function main() {
-    let rows = await ask("Nombre de lignes (rows) ? ");
-    let cols = await ask("Nombre de colonnes (cols) ? ");
+    let rows = await ask("Nombre de lignes ? ");
+    let cols = await ask("Nombre de colonnes  ? ");
   
     let matrixA = await getMatrix(rows, cols, 1);
     let matrixB = await getMatrix(rows, cols, 2);
@@ -51,6 +67,16 @@ function sumMatrices(matrixA, matrixB) {
     console.log("Matrice A:", matrixA);
     console.log("Matrice B:", matrixB);
     console.log("Somme des matrices:", sum);
+
+    if(rows === cols){
+        console.log("Determinant de la matrice A:", determinant(matrixA))
+        console.log("Determinant de la matrice A:", determinant(matrixB))
+
+
+
+    }else{
+        console.log("Determinant seulement pour les matrices carrées (rows === cols)");
+    }
   
     rl.close();
 })();
