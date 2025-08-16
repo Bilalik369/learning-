@@ -1,4 +1,4 @@
-import { error } from "console";
+
 import readline from "readline";
 
 const rl = readline.createInterface({
@@ -96,6 +96,21 @@ function multiplyMatrices(matrixA, matrixB){
     return result;
 }
 
+function test(matrix){
+    let result = [];
+    for(let i = 0; i < matrix.length; i++){
+        for(let j = 0; j < matrix[i].length; j++){
+            if(matrix[i][j] > 3){
+                result.push(matrix[i][j]); 
+            }
+        }
+    }
+    return result;
+}
+
+
+
+
 (async function main() {
     let rows = await ask("Nombre de lignes ? ");
     let cols = await ask("Nombre de colonnes  ? ");
@@ -113,7 +128,7 @@ function multiplyMatrices(matrixA, matrixB){
         console.log("Determinant de la matrice A:", determinant(matrixA))
         console.log("Determinant de la matrice A:", determinant(matrixB))
 
-
+    
 
     }else{
         console.log("Determinant seulement pour les matrices carrées (rows === cols)");
@@ -121,6 +136,12 @@ function multiplyMatrices(matrixA, matrixB){
     console.log("Transpose de la matrice A:", transpose(matrixA));
 
     console.log("multiplu de matrice" , multiplyMatrices(matrixA , matrixB))
+    
+    console.log(  "sup > 3",test(sum))
+
+
+     let prod = multiplyMatrices(matrixA , matrixB)
+     console.log( "element > 3" , test(prod))
   
     rl.close();
 })();
