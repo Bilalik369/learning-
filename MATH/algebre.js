@@ -1,3 +1,4 @@
+import { error } from "console";
 import readline from "readline";
 
 const rl = readline.createInterface({
@@ -49,10 +50,35 @@ function determinant(martix){
 
     let det = 0
     for(let col = 0; col<n; col++){
-        let subMatrix = martix.slice(1).map(row => row.filter((_, j)=> j !== col))
+        let subMatrix = martix.slice(1).map(row => row.filter((_,j)=> j !== col))
         det += ((col % 2 === 0 ? 1 : -1)) * determinant(subMatrix    )
     }
     return det
+}
+
+function multiplyMatrices(matrixA, matrixB){
+    const rowsA = matrixA.length;
+    const colsA = matrixA[0].length;
+    const rowsB = matrixB.length;
+    const colsB = matrixB[0].length;
+
+    if(colsA !== rowsB){
+        throw new Error("Impossible de multiplier : le nombre de colonnes de la matrice A doit être égal au nombre de lignes de la matrice B");
+    }
+
+    let result = [];
+    for(let i = 0; i < rowsA; i++){
+        let row = [];
+        for(let j = 0; j < colsB; j++){
+            let sum = 0;
+            for(let k = 0; k < colsA; k++){
+                sum += matrixA[i][k] * matrixB[k][j];
+            }
+            row.push(sum);
+        }
+        result.push(row);
+    }
+    return result;
 }
 
 (async function main() {
@@ -77,6 +103,7 @@ function determinant(martix){
     }else{
         console.log("Determinant seulement pour les matrices carrées (rows === cols)");
     }
+    console.log("multiplu de matrice" , multiplyMatrices(matrixA , matrixB))
   
     rl.close();
 })();
