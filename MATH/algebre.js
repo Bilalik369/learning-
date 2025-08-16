@@ -41,6 +41,21 @@ function sumMatrices(matrixA, matrixB) {
 }
 
 
+function transpose(matrix){
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    let result = [];
+    for(let i = 0; i < cols; i++){
+        let row = [];
+        for(let j = 0; j < rows; j++){
+            row.push(matrix[j][i]);
+        }
+        result.push(row);
+    }
+    return result;
+}
+
+
 function determinant(martix){
     const n = martix.length
 
@@ -103,6 +118,8 @@ function multiplyMatrices(matrixA, matrixB){
     }else{
         console.log("Determinant seulement pour les matrices carrées (rows === cols)");
     }
+    console.log("Transpose de la matrice A:", transpose(matrixA));
+
     console.log("multiplu de matrice" , multiplyMatrices(matrixA , matrixB))
   
     rl.close();
