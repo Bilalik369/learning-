@@ -62,3 +62,29 @@ for(let i = 0 ; i<A.length; i++){
     mult.push(row)
 }
 console.log(mult)
+
+
+const points = [
+    [10, 12, 8, 15],
+    [9, 14, 11, 10],
+    [13, 7, 12, 9]
+  ];
+
+  const lignes = points.map((row=> row.reduce((a,c)=> a+c, 0)))
+  console.log(lignes)
+
+   const cols = points[0].map((_, col)=>points.reduce((a ,c)=> a +c[col] , 0))
+   console.log( "hey",cols)
+
+
+   const notes = [
+    [12, 15, 10, 14],
+    [9, 11, 13, 10],  
+    [16, 14, 12, 15], 
+    [8, 10, 11, 9], 
+    [13, 17, 14, 16] 
+  ];
+
+  const moyenne = notes.reduce((a ,c)=> a + c.reduce((sum  , row)=> sum + row , 0), 0)
+  
+  console.log(moyenne)
