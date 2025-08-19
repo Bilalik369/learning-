@@ -88,3 +88,44 @@ const points = [
   const moyenne = notes.reduce((a ,c)=> a + c.reduce((sum  , row)=> sum + row , 0), 0)
   
   console.log(moyenne)
+
+
+
+  function reverseString(str) {
+    return str.split("").reduce((a ,c)=> c + a, "")
+
+}
+console.log(reverseString("hellow"))
+
+
+function findMax(numbers) {
+ return numbers.reduce((best , cour)=>{
+  return cour>best ? cour : best
+ })
+}
+console.log(findMax([1 , 2 ,3 , 5, 2 ,  34])) 
+
+function countCharacters(str) {
+ return str.length 
+}
+console.log(countCharacters("helocncocccdz"))
+
+
+const a = [1,2,3]
+const b = [1,2,3]
+
+console.log(a === b)
+
+
+console.log([] + {}); 
+console.log({} + []);
+
+console.log(null == undefined)
+
+console.log("5" - 2)
+
+console.log([1 , 2 ] =="1,2")
+console.log({} + []);
+
+
+ console.log(true - true)
