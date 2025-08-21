@@ -1453,3 +1453,38 @@ const str = text.split("").reduce((a ,c)=> {
 }, {} )
 
 console.log(str)
+
+const texts = [
+  "hello world hello",
+  "javascript is fun and javascript is powerful",
+  "openai creates amazing AI tools"
+];
+
+const spl = texts.map((e=> e.split('').filter(e=> e !== " " && e !== ",").reduce((a , c)=>{
+  if(!a[c]){
+    a[c] = {count : 0}
+  }
+  a[c].count++
+  return a
+}, {})))
+console.log(spl)
+
+//2 
+const set = texts.map((e=>e.split(" ").reduce((a ,c)=>{
+  a[c] = (a[c] || 0) + 1;
+  return a
+}, {})))
+console.log(set)
+// 3
+
+const fil = texts.map((e=> e.split(" ").reduce((a ,c)=>{
+  if(!a[c]){
+    a[c]=  {count :0}
+  }
+  a[c].count++;
+  return a
+}, {})))
+const best = fil.reduce((best , cournt)=>{
+  return cournt.count > best.count ? cournt : best
+})
+console.log(best)
