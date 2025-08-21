@@ -1439,14 +1439,17 @@ const sales = [
   { product: "Phone", quantity: 5, price: 500 },
 ];
 
-const hi = sales.reduce((a, c)=>{
-  if(!a[c.quantity]){
-    a[c.quantity] = { count : 0 }
-    
-  }
- 
-  a[c.quantity].count++
-  return 
-} , {})
 
-console.log(hi)
+
+
+const  text = "hello world"
+
+const str = text.split("").reduce((a ,c)=> {
+  if(!a[c]){
+    a[c] = {count :0}
+  }
+  a[c].count++
+  return a
+}, {} )
+
+console.log(str)
