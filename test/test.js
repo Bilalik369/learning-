@@ -1488,3 +1488,26 @@ const best = fil.reduce((best , cournt)=>{
   return cournt.count > best.count ? cournt : best
 })
 console.log(best)
+
+const iken = "Hello, hello! How are you? I hope you are doing well. Well, well, hello again.";
+
+
+const tes = iken.toLowerCase().replace(/[?,!.]/g , "")
+const fi = tes.split(" ").reduce((a,c)=>{
+  a[c] = (a[c] || 0) + 1
+  return a 
+}, {})
+
+let wrd = 0 ;
+let max = 0;
+
+for(const word in fi){
+if(fi[word] > max){
+   
+max = fi[word]
+wrd  = word
+
+}
+}
+console.log("//" , wrd)
+
