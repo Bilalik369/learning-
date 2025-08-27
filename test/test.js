@@ -1511,3 +1511,39 @@ wrd  = word
 }
 console.log("//" , wrd)
 
+
+
+const A = [
+  [1, 2],
+  [3, 4]
+];
+
+const B = [
+  [1, 2],
+  [0, 6]
+];
+
+const matrix = [];
+
+for(let i = 0 ; i<A.length ; i++){
+  let row = []
+  for(let j = 0 ; j<B[0].length ;j++){
+    let sum = 0
+    for(let k = 0 ; k < A[0].length ;   k++){
+      sum+= A[i][k]*B[k][j]
+    }
+    row.push(sum)
+  }
+  matrix.push(row)
+}
+console.log(matrix)
+
+
+
+
+
+
+
+
+
+
