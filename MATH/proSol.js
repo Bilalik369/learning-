@@ -170,3 +170,11 @@ function complex(a , b , c){
   
 }
 console.log(complex(12 , 1 , 3))
+
+
+
+function sumn(n){
+  return (n*(n+ 1) / 2)
+
+}
+console.log(sumn(10))
