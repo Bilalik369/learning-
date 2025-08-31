@@ -135,3 +135,17 @@ console.log({} + []);
 
 
 
+function equation(a , b , c){
+  let delta = b*b - 4*a *c
+
+  if (delta < 0){
+   return "error"
+  }else if(delta === 0){
+    return [-b /(2*a)]
+
+  }else {
+    return [(-b -Math.sqrt(delta))/ (2*a) , (-b+ Math.sqrt(delta)) / (2*a)]
+
+  }
+}
+console.log(equation(1 , 23 , 4))
