@@ -149,3 +149,24 @@ function equation(a , b , c){
   }
 }
 console.log(equation(1 , 23 , 4))
+
+
+function complex(a , b , c){
+  let delta = b*b - 4*a *c 
+  if(delta <0){
+    let real = (-b / (2*a))
+    let imag = (Math.sqrt(-delta))
+    return [`${real.toFixed(2)} + i${imag.toFixed(2)} ` , `${real.toFixed(2)} -i${imag.toFixed(2)}`]
+
+
+  }else if(delta === 0){
+    return [-b /(2*a)]
+
+  }else {
+    return [(-b -Math.sqrt(delta))/ (2*a) , (-b+ Math.sqrt(delta)) / (2*a)]
+
+  }
+
+  
+}
+console.log(complex(12 , 1 , 3))
