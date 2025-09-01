@@ -201,3 +201,24 @@ const integral = integrale(0, 1, x => f(x) + g(x));
 
 console.log(integral);
   
+
+function crae(n){
+
+return (n*(n+1)*(2*n + 1) / 6)
+}
+console.log("gg" ,crae(4))
+
+
+
+function approx(n){
+ let sum = 0;
+ for(let i = 0 ; i<n ; i++){
+  let term = 4 / (2 * i + 1)
+  if(i % 2 !== 0) term *= -1;
+
+  sum += term;
+ }
+ return sum
+}
+
+console.log("Pi",approx(13912))
