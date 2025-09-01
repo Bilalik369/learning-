@@ -178,3 +178,26 @@ function sumn(n){
 
 }
 console.log(sumn(10))
+
+
+function integrale(a, b, f, n = 1000){
+  if(n % 2 !== 0) n++; 
+  const h = (b - a) / n;
+
+  let sum = f(a) + f(b);
+
+  for (let i = 1; i < n; i++) {
+    let x = a + i * h;
+    sum += (i % 2 === 0 ? 2 : 4) * f(x);
+  }
+
+  return (h / 3) * sum;
+}
+
+const f = x => x*x*x;
+const g = x => Math.sin(x) * 2;
+
+const integral = integrale(0, 1, x => f(x) + g(x));
+
+console.log(integral);
+  
