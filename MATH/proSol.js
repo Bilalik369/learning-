@@ -222,3 +222,27 @@ function approx(n){
 }
 
 console.log("Pi",approx(13912))
+
+
+const valeur = [
+  [1, 2],
+  [3, 4]
+];
+
+const landa = []
+let lamd  = "x"
+
+for(let i = 0; i<valeur.length; i++){
+  let row = []
+  for(let j =0 ; j<valeur[0].length; j++){
+    if(i===j){
+      row.push(`${valeur[i][j]} - ${lamd}`)
+    }else{
+      row.push(valeur[i][j])
+    }
+    
+  }
+  landa.push(row)
+
+}
+console.log(landa)
