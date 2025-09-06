@@ -245,4 +245,6 @@ for(let i = 0; i<valeur.length; i++){
   landa.push(row)
 
 }
-console.log(landa)
+
+let det = `(${landa[0][0]}*${landa[1][1]}) - (${landa[1][0]}*${landa[0][1]})`;
+console.log(det)
