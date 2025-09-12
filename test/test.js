@@ -1550,4 +1550,9 @@ console.log(matrix)
 
 
 
-    
+ Router.get("/all" , getAll);
+
+ export const getAll = async(req , res)=>{
+const all =  await user.find()
+return res.status(201).json(all)
+ }
