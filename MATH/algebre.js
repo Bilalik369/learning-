@@ -12,7 +12,7 @@ function ask(question) {
             resolve(Number(answer));
         });
     });
-}
+} 
 
 async function getMatrix(rows, cols, matrixNumber) {
     let Matrix = [];
