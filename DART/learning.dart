@@ -35,18 +35,41 @@
 
 
 // }
-import 'dart:io';
+// import 'dart:io';
 
 
-void main(){
-  print("ch7al f 3MRK");
+// // void main(){
+// //   print("ch7al f 3MRK");
 
-  String? input = stdin.readLineSync();
-  int age = int.parse(input!);
+// //   String? input = stdin.readLineSync();
+// //   int age = int.parse(input!);
   
-  if(age >= 18 ){
-    print("agee");
-  }else {
-    print("minor");
-  }
-}
+// //   if(age >= 18 ){
+// //     print("agee");
+// //   }else {
+// //     print("minor");
+// //   }
+// // }
+
+// void greet(){
+//   print("hello word");
+
+// }
+// void getuser( String name){
+// print("salma $name");
+
+// }
+// int sum(int a , int b ){
+//   return a + b;
+// }
+// int multy(int a , int b)=>  a * b;
+
+// void main(){
+//   greet();
+//   getuser("bilal");
+//   getuser("youssfe");
+//   print(sum(1 , 2));
+//   print(multy( 22 , 11));
+
+
+// }
