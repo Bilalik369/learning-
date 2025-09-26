@@ -107,25 +107,70 @@
 
 
 
-void main(){
- final  cookie =Cookie();
+// void main(){
+//  final  cookie =Cookie();
 
- print(cookie.shape);
- cookie.shape = "triangle";
- print(cookie.shape);
+//  print(cookie.shape);
+//  cookie.shape = "triangle";
+//  print(cookie.shape);
+// }
+
+// class Cookie {
+//   String shape = "Circle";
+//   double size = 15.2;
+
+//   void baking(){
+//     print("backin startded");
+//   }
+
+//   bool isCooling (){
+//     return false;
+//   }
+// }
+
+import 'dart:ffi';
+
+void main(){
+  print(Cookie().name);
+  print(Cookie().size);
+  print(Cookie().falavor);
+  Cookie().bake();
+ 
+ print('-----');
+
+
+var exo = ChocolateCookie();
+print(exo.name);
+print(exo.size);
+print(exo.falavor);
+print('Has chocolate chips: ${exo.hasChocolateChips}');
+exo.bake();
+
+
+
 }
 
 class Cookie {
-  String shape = "Circle";
-  double size = 15.2;
+  String name = "tonique";
+  double size = 1.3;
+  String falavor = "pomme"; 
 
-  void baking(){
-    print("backin startded");
+  void bake(){
+    print('baking $name cookie');
   }
 
-  bool isCooling (){
-    return false;
+}
+class ChocolateCookie extends Cookie{
+  bool hasChocolateChips = true;
+
+@override
+  
+  void bake(){
+    print('baking $name cookie');
   }
 }
+
+
+
 
 
